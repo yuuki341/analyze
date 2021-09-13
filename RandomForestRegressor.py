@@ -4,9 +4,9 @@ import pickle
 from sklearn.preprocessing import MinMaxScaler
 
 def RFR(test):
- x_test = pd.read_csv(test)
+ X_test = pd.read_csv(test)
  #すべてがnanを削除
- x_test=x_test.dropna(how='all',axis=1)
+ x_test=X_test.dropna(how='all',axis=1)
  
  #すべての要素が同じものを削除
  delete=['掲載期間　終了日','動画タイトル','動画コメント','（派遣）応募後の流れ','対象者設定　年齢上限','動画ファイル名',
@@ -43,7 +43,7 @@ def RFR(test):
  np.place(y_pred, y_pred < 0, 0)
  y_pred=np.round(y_pred,decimals=0) 
 
- df1=x_test['お仕事No.']
+ df1=X_test['お仕事No.']
  df2=pd.Series(y_pred)
  df=pd.concat([df1, df2], axis=1)
  df_new = df.rename(columns={0: '応募数 合計'})
