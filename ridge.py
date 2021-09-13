@@ -43,7 +43,7 @@ def rid(test):
  np.place(y_pred, y_pred < 0, 0)
  y_pred=np.round(y_pred,decimals=0) 
 
- df1=test_x['お仕事No.']
+ df1=x_test['お仕事No.']
  df2=pd.Series(y_pred)
  df=pd.concat([df1, df2], axis=1)
  df_new = df.rename(columns={0: '応募数 合計'})
