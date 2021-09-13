@@ -33,11 +33,11 @@ def rid(test):
  #特徴量スケーリング
  scaler = MinMaxScaler()
  scaler.fit(x_test)
- x_test = scaler.transform(x_test)
+ x_test_scaled = scaler.transform(x_test)
 
  # 保存したモデルをロードする
  loaded_model = pickle.load(open('ridge_model.sav', 'rb'))
- y_pred=loaded_model.predict(x_test)
+ y_pred=loaded_model.predict(x_test_scaled)
  
  #0未満の要素を0に変換
  np.place(y_pred, y_pred < 0, 0)
