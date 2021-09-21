@@ -1,5 +1,4 @@
 import streamlit as st
-import MLP
 import base64
 
 st.title('求人原稿に対する応募数の予測')
