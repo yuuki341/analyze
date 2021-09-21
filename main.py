@@ -1,8 +1,5 @@
 import streamlit as st
 import MLP
-import ridge
-import Linear
-import RandomForestRegressor
 import base64
 
 st.title('求人原稿に対する応募数の予測')
